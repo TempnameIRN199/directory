@@ -80,19 +80,6 @@ void Directory::createFile()
 	fout.close();
 }
 
-// метод создания файла в который будут записываться данные в папке проекта
-void Directory::writeToFile()
-{
-	ofstream fout;
-	fout.open("directory.txt", ios::app);
-	fout << this->name << endl;
-	fout << this->owner << endl;
-	fout << this->phone << endl;
-	fout << this->address << endl;
-	fout << this->activity << endl;
-	fout.close();
-}
-
 void Directory::showAll()
 {
 	ifstream fin;
@@ -307,7 +294,7 @@ void Directory::searchActivity()
 	}
 	fin.close();
 }
-// СЃРѕР·РґР°С‚СЊ С„СѓРЅРєС†РёСЋ РґР»СЏ РёР·РјРµРЅРµРЅРёР№ Р·Р°РїРёСЃРё РІ СЂР°РЅРµРµ СЃРѕР·РґР°РЅРЅРѕРј С„Р°Р№Р»Рµ
+// создать функцию для изменений записи в ранее созданном файле
 void Directory::changeRecord()
 {
 	ifstream fin;
@@ -335,7 +322,26 @@ void Directory::changeRecord()
 		getline(fin, address);
 		getline(fin, activity);
 		if (name == name)
-{
-	Directory directory;
-	
+		{
+			cout << "Enter new name: ";
+			cin >> name;
+			cout << "Enter new owner: ";
+			cin >> owner;
+			cout << "Enter new phone: ";
+			cin >> phone;
+			cout << "Enter new address: ";
+			cin >> address;
+			cout << "Enter new activity: ";
+			cin >> activity;
+		}
+		fout << name << endl;
+		fout << owner << endl;
+		fout << phone << endl;
+		fout << address << endl;
+		fout << activity << endl;
+	}
+	fin.close();
+	fout.close();
+	remove("directory.txt");
+	rename("temp.txt", "directory.txt");
 }

@@ -42,4 +42,5 @@ public:
 	void searchActivity();
 	// добавление записи ранее созданного файла
 	void addRecord();
+	void changeRecord();
 };
