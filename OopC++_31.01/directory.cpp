@@ -63,7 +63,7 @@ string Directory::getActivity()
 	return this->activity;
 }
 
-void showMenu()
+void Directory::showMenu()
 {
 	cout << "1. Search by name" << endl;
 	cout << "2. Search by owner" << endl;
@@ -73,14 +73,14 @@ void showMenu()
 	cout << "6. Exit" << endl;
 }
 
-void createFile()
+void Directory::createFile()
 {
 	ofstream fout;
 	fout.open("directory.txt", ios::out);
 	fout.close();
 }
 
-void showAll()
+void Directory::showAll()
 {
 	ifstream fin;
 	fin.open("directory.txt", ios::in);
@@ -107,7 +107,7 @@ void showAll()
 	fin.close();
 }
 
-void writetoFile()
+void Directory::writeToFile()
 {
 	ofstream fout;
 	fout.open("directory.txt", ios::app);
@@ -135,7 +135,7 @@ void writetoFile()
 	fout.close();
 }
 
-void readFromFile()
+void Directory::readFromFile()
 {
 	ifstream fin;
 	fin.open("directory.txt", ios::in);
@@ -167,7 +167,7 @@ void readFromFile()
 	fin.close();
 }
 
-void searchName()
+void Directory::searchName()
 {
 	ifstream fin;
 	fin.open("directory.txt", ios::in);
@@ -199,7 +199,7 @@ void searchName()
 	fin.close();
 }
 
-void searchOwner()
+void Directory::searchOwner()
 {
 	ifstream fin;
 	fin.open("directory.txt", ios::in);
@@ -231,7 +231,7 @@ void searchOwner()
 	fin.close();
 }
 
-void searchPhone()
+void Directory::searchPhone()
 {
 	ifstream fin;
 	fin.open("directory.txt", ios::in);
@@ -263,7 +263,7 @@ void searchPhone()
 	fin.close();
 }
 
-void searchAddress()
+void Directory::searchActivity()
 {
 	ifstream fin;
 	fin.open("directory.txt", ios::in);
@@ -273,8 +273,8 @@ void searchAddress()
 		return;
 	}
 	string name, owner, phone, address, activity;
-	cout << "Enter address: ";
-	cin >> address;
+	cout << "Enter activity: ";
+	cin >> activity;
 	while (!fin.eof())
 	{
 		getline(fin, name);
@@ -282,7 +282,7 @@ void searchAddress()
 		getline(fin, phone);
 		getline(fin, address);
 		getline(fin, activity);
-		if (address == address)
+		if (activity == activity)
 		{
 			cout << "Name: " << name << endl;
 			cout << "Owner: " << owner << endl;
@@ -293,4 +293,13 @@ void searchAddress()
 		}
 	}
 	fin.close();
+}
+
+int main()
+{
+	// использовать метод вызова меню
+	// использовать ранее созданные методы для реализации работы с файлом 
+	// использовать ранее созданные методы для реализации поиска по файлу
+	Directory directory;
+	
 }

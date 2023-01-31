@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="directory.cpp" />
-    <ClCompile Include="OopC++_31.01.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="directory.h" />

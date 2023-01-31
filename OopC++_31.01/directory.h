@@ -10,6 +10,7 @@ private:
 	string address;
 	string activity;
 public:
+	Directory();
 	Directory(string name, string owner, string phone, string address, string activity);
 	~Directory();
 	void setName(string name);
@@ -39,4 +40,6 @@ public:
 	void searchPhone();
 	// ѕоиск по роду де€тельности
 	void searchActivity();
+	// добавление записи ранее созданного файла
+	void addRecord();
 };
