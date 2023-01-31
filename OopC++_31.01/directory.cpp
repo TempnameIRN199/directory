@@ -80,6 +80,19 @@ void Directory::createFile()
 	fout.close();
 }
 
+// метод создания файла в который будут записываться данные в папке проекта
+void Directory::writeToFile()
+{
+	ofstream fout;
+	fout.open("directory.txt", ios::app);
+	fout << this->name << endl;
+	fout << this->owner << endl;
+	fout << this->phone << endl;
+	fout << this->address << endl;
+	fout << this->activity << endl;
+	fout.close();
+}
+
 void Directory::showAll()
 {
 	ifstream fin;
@@ -297,9 +310,6 @@ void Directory::searchActivity()
 
 int main()
 {
-	// использовать метод вызова меню
-	// использовать ранее созданные методы для реализации работы с файлом 
-	// использовать ранее созданные методы для реализации поиска по файлу
 	Directory directory;
 	
 }
