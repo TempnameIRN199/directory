@@ -307,8 +307,34 @@ void Directory::searchActivity()
 	}
 	fin.close();
 }
-
-int main()
+// создать функцию для изменений записи в ранее созданном файле
+void Directory::changeRecord()
+{
+	ifstream fin;
+	fin.open("directory.txt", ios::in);
+	if (!fin.is_open())
+	{
+		cout << "File not found" << endl;
+		return;
+	}
+	ofstream fout;
+	fout.open("temp.txt", ios::out);
+	if (!fout.is_open())
+	{
+		cout << "File not found" << endl;
+		return;
+	}
+	string name, owner, phone, address, activity;
+	cout << "Enter name: ";
+	cin >> name;
+	while (!fin.eof())
+	{
+		getline(fin, name);
+		getline(fin, owner);
+		getline(fin, phone);
+		getline(fin, address);
+		getline(fin, activity);
+		if (name == name)
 {
 	Directory directory;
 	
