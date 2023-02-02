@@ -65,12 +65,16 @@ string Directory::getActivity()
 
 void Directory::showMenu()
 {
-	cout << "1. Search by name" << endl;
-	cout << "2. Search by owner" << endl;
-	cout << "3. Search by phone" << endl;
-	cout << "4. Search by activity" << endl;
-	cout << "5. Show all records and add" << endl;
-	cout << "6. Exit" << endl;
+	cout << "1. Create file" << endl;
+	cout << "2. Show all" << endl;
+	cout << "3. Write to file" << endl;
+	cout << "4. Read from file" << endl;
+	cout << "5. Search by name" << endl;
+	cout << "6. Search by owner" << endl;
+	cout << "7. Search by phone" << endl;
+	cout << "8. Search by activity" << endl;
+	cout << "9. Change record" << endl;
+	cout << "0. Exit" << endl;
 }
 
 void Directory::createFile()
@@ -294,7 +298,7 @@ void Directory::searchActivity()
 	}
 	fin.close();
 }
-// создать функцию дл€ изменений записи в ранее созданном файле
+
 void Directory::changeRecord()
 {
 	ifstream fin;
@@ -344,4 +348,51 @@ void Directory::changeRecord()
 	fout.close();
 	remove("directory.txt");
 	rename("temp.txt", "directory.txt");
+}
+
+int main()
+{
+	// реализовать программу использу€ класс Directory и функции дл€ работы с файлами
+	// использовать функцию showMenu дл€ вывода меню
+	// использовать функцию switch дл€ выбора пункта меню
+	// использовать функцию exit дл€ выхода из программы
+	Directory directory;
+	int choice;
+	while (true)
+	{
+		directory.showMenu();
+		cout << "Enter your choice: ";
+		cin >> choice;
+		switch (choice)
+		{
+		case 1:
+			directory.createFile();
+			directory.writeToFile();
+			break;
+		case 2:
+			directory.showAll();
+			break;
+		case 3:
+			directory.readFromFile();
+		case 4:
+			directory.searchName();
+			break;
+		case 5:
+			directory.searchOwner();
+			break;
+		case 6:
+			directory.searchPhone();
+			break;
+		case 7:
+			directory.searchActivity();
+			break;
+		case 8:
+			directory.changeRecord();
+			break;
+		case 9:
+			exit(0);
+		default:
+			cout << "Wrong choice" << endl;
+		}
+	}
 }
